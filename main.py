@@ -13,7 +13,7 @@ REFRESH_TOKEN = "1000.079533a7c5c51308e9fc96dc685b0a10.a364615854910f4cf94f6fc0d
 
 # === Field Mapping ===
 FIELD_MAP = {
-    "Text1": "SSN",
+    "Text1": "Co_First_Name",       # ✅ SSN (odd field name in Zoho)
     "Text2": "Date_of_Birth",
     "Text3": "Full_Name",
     "Text4": "Home_Address",
@@ -23,10 +23,10 @@ FIELD_MAP = {
     "Text8": "Phone",
     "Text9": "Mobile",
     "Text10": "Email",
-    "Text11": "Full_Name",
-    "Text12": "SSN",
-    "Text17": "Full_Name",
-    "Text18": "SSN"
+    "Text11": "Full_Name",          # Page 2 Name
+    "Text12": "Co_First_Name",      # Page 2 SSN
+    "Text17": "Full_Name",          # Page 3 Name
+    "Text18": "Co_First_Name"       # Page 3 SSN
 }
 
 def refresh_access_token():
@@ -106,4 +106,5 @@ def generate_pdf():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
+
 
