@@ -45,7 +45,7 @@ def refresh_access_token():
     raise Exception(f"❌ Failed to refresh access token: {data}")
 
 def fetch_contact_by_id(access_token, contact_id):
-    url = f"https://www.zohoapis.com/crm/v2/Clients/{contact_id}"
+    url = f"https://www.zohoapis.com/crm/v2/Contacts/{contact_id}"
     headers = {"Authorization": f"Zoho-oauthtoken {access_token}"}
     response = requests.get(url, headers=headers)
     response.raise_for_status()
@@ -106,3 +106,4 @@ def generate_pdf():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
+
